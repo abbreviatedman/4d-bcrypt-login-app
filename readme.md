@@ -1,43 +1,28 @@
-# 4D. Bcrypt-login-app
+# 4E. Exploring JSX
 
 ---
 
-- Overview
 - Getting Started
-- Users collection
-- Sign up page
-- Login Sessions
-- Users views
-- Relate Users with Data
-- Integrate views for relational data
+- What's Changed
+- Looking At Our First JSX File
+- Adding A View For One Pokemon
+- Adding A Re-Usable Component
+- Adding A Wrapping Component
+- Adding A View For All Pokemon
 
 ---
-
-## Overview
-
-The base version of this lesson is a full stack application using MongoDB as the database, EJS as the front end views, Express handling the server. There is 1 collection in the database (the starter data can be found in the models folder), and the views are set up only to see that 1 collection.
-
-The goal of this lesson is to implement Users as the 2nd collection (with a property that references the original collection), and implementation of login sessions. While a user is logged in, the user should have a view to see their information, including the relationship to the data collection. The view should also link to the original data collection from the user's page.
-
-In other words, we're giving this application the following features:
-
-- Users can now create an account
-- Users can now log in
-- Users can now "favorite" things in this application
-- Users can visit their user page to see the list of their "favorites"
-- Users can log out
 
 ## Getting Started
 
 - Use command `npm install` to install the base dependencies listed on the `package.json` file.
 
-- Create a `.env` file to include your MongoDB connection string. Make sure to change the extension at the end to `...mongodb.net/login-app`
+- Create a `.env` file to include your MongoDB connection string. Make sure to change the extension at the end to `...mongodb.net/jsx-app`
 
 - In the terminal, use command `node index.js` to start up the server. Navigate to `localhost:3000/` in the browser to test that the application works.
 
-- Refresh your MongoDB Compass to see the `login-app` database. The `pokemons` collection should be empty to begin with. Select it, click on the green `ADD DATA` button, select `import file`, and select the `allPokemon.json` file found on the models folder of this appliction
+- Refresh your MongoDB Compass to see the `jsx-app` database. The `pokemons` collection should be empty to begin with. Select it, click on the green `ADD DATA` button, select `import file`, and select the `allPokemon.json` file found on the models folder of this appliction
 
-- In the browser, navigate to `http://localhost:3000/allMons` to make sure it can be seen on the client side
+- In the browser, navigate to `http://localhost:3000/` to make sure it can be seen on the client side
 
 - Turn the server off with `ctrl + c`
 

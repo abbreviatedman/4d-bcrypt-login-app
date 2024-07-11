@@ -12,7 +12,7 @@ async function renderAllPokemon(req, res) {
     let result = await Pokemon.find({});
 
     // Populates a web page with our entire collection data
-    res.render("allMons", { pokemons: result });
+    res.render("allMons", { pokemon: result });
   } catch (error) {
     console.log(`renderAllPokemon error: ${error}`);
   }
@@ -23,10 +23,10 @@ async function renderOnePokemon(req, res) {
   try {
     const pokemon = await Pokemon.findOne({ Name: req.params.name });
     // search for the current user in the database
-    const user = await User.findById(req.session.user.id)
+    // const user = await User.findById(req.session.user.id)
     // check if the current pokemon's id is in the user's favoritePokemon array
-    const isFaved = user.favoritePokemon.includes(pokemon._id);
-    res.render("oneMon", { pokemon: pokemon, isFaved: isFaved });
+    // const isFaved = user.favoritePokemon.includes(pokemon._id);
+    res.render("oneMon", { pokemon: pokemon});
   } catch (error) {
     console.log(`renderOnePokemon error: ${error}`);
   }

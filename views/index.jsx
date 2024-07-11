@@ -1,18 +1,23 @@
 const React = require('react');
 
-const Home = () => (
-    <html>
-        <head><title>Pokemon App</title></head>
-        <body>
+const HtmlSkeleton = require('./HtmlSkeleton');
+const Link = require('./Link');
+
+const Home = () => {
+    return (
+        <HtmlSkeleton title="Pokemon App">
             <h1>Welcome to our Pokemon App</h1>
             <br />
-            <a href="/signUp">Sign Up for this app</a>
             <br />
-            <a href="/logIn">Log In to your account on this app</a>
+            <Link href="/signUp" text="Sign up for this app" />
             <br />
-            <a href="/allMons">See all the Pokemon in the database</a>
-        </body>
-    </html>
-)
+            <br />
+            <Link href="/logIn" text = "Log in to your account" />
+            <br />
+            <br />
+            <Link href="/allMons" text="See all the pokemons" />
+        </HtmlSkeleton>
+    )
+}
 
 module.exports = Home;

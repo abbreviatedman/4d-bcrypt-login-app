@@ -1,19 +1,21 @@
-const React = require('react')
+const React = require('react');
+
+const HtmlSkeleton = require('./HtmlSkeleton');
+const Link = require('./Link');
 
 const AllMons = (props) => {
     return (
-        <div>
-            <a href="/">Back to the homepage</a>
+        <HtmlSkeleton title="Pokemons List">
+            <Link href="/" text="Back home" />
             <br />
-            <a href="/createOneMon">Create a new Pokemon</a>
-            {props.pokemons.map((mon) => (
+            <Link href="/createOneMon" text="Create a new pokemon" />
+            {props.pokemon.map((mon) => (
                 <div key={mon._id}>
-                    <h1>Pokedex No. {mon.PokedexNo}</h1>
-                    <h2>Name: <a href={`/oneMon/${mon.Name}`}>{mon.Name}</a></h2>
+                    <h1>Pokedex No: {mon.PokedexNo}</h1>
+                    <h2>Name: <Link href={`/oneMon/${mon.Name}`} text={mon.Name} /></h2>
                 </div>
             ))}
-            <br />
-        </div>
+        </HtmlSkeleton>
     )
 }
 
